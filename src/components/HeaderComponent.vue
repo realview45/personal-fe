@@ -10,10 +10,10 @@
                     <v-btn to="{path:'/'}">chat서비스</v-btn>
                 </v-col>
                 <v-col class = "d-flex justify-end">
-                    <v-btn>MyChatPage</v-btn>
-                    <v-btn>회원가입</v-btn>
-                    <v-btn>로그인</v-btn>
-                    <v-btn>로그아웃</v-btn>
+                    <v-btn v-if="isLogin">MyChatPage</v-btn>
+                    <v-btn v-if="!isLogin">회원가입</v-btn>
+                    <v-btn v-if="!isLogin">로그인</v-btn>
+                    <v-btn v-if="isLogin" >로그아웃</v-btn>
                 </v-col>
             </v-row>
         </v-container>
@@ -23,11 +23,14 @@
 export default{
     data(){
         return{
-
+            isLogin: false,
         }
     },
     created(){
-        
+        const token = localStorage.getItem("token");
+        if(token){
+            this.isLogin = true;
+        }
     }
     ,methods:{
 
