@@ -13,7 +13,7 @@
                     <v-btn v-if="isLogin">MyChatPage</v-btn>
                     <v-btn v-if="!isLogin">회원가입</v-btn>
                     <v-btn v-if="!isLogin">로그인</v-btn>
-                    <v-btn v-if="isLogin" >로그아웃</v-btn>
+                    <v-btn v-if="isLogin" @click="doLogout">로그아웃</v-btn>
                 </v-col>
             </v-row>
         </v-container>
@@ -33,7 +33,10 @@ export default{
         }
     }
     ,methods:{
-
+        doLogout(){
+            localStorage.clear();
+            window.location.reload();
+        }
     }
 }
 // methods는 함수를 정의, 
