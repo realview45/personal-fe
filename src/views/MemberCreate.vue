@@ -52,7 +52,7 @@ export default{
                 email : this.email,
                 password : this.password,
             }
-            await axios.post("http://localhost:8081/member/create", data);
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/member/create`, data);
             this.$router.push('/');
         }
     }

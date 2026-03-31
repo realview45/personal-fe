@@ -44,7 +44,7 @@ export default{
                 email : this.email,
                 password : this.password
             }
-            const response = await axios.post("http://localhost:8081/member/doLogin", data);
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/member/doLogin`, data);
             console.log(response);
        }
     }
