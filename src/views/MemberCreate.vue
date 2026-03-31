@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default{
     data(){
         return{
@@ -44,8 +45,14 @@ export default{
         }
     },
     methods:{
-        memberCreate(){
-
+        async memberCreate(){
+            const data = {
+                name : this.name,
+                email : this.email,
+                password : this.password,
+            }
+            await axios.post("http://localhost:8081/member/create", data);
+            this.$router.push('/');
         }
     }
 }
