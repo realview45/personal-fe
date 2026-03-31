@@ -7,7 +7,9 @@
                         회원목록
                     </v-card-title>
                     <v-card-text>
-
+                        <v-table>
+                            
+                        </v-table>
                     </v-card-text>
                 </v-card>
             </v-col>

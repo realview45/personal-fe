@@ -3,8 +3,8 @@
         <v-container>
             <v-row align="center">
                 <v-col class = "d-flex justify-start">
-                    <v-btn to="{path:'/member/list'}">회원목록</v-btn>
-                    <v-btn to="{path:'/groupchatting/list'}">채팅방목록</v-btn>
+                    <v-btn to='/member/list'>회원목록</v-btn>
+                    <v-btn to='/groupchatting/list'>채팅방목록</v-btn>
                 </v-col>
                 <v-col class = "text-center">
                     <v-btn to='/'>chat서비스</v-btn>
