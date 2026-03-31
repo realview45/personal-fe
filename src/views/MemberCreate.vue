@@ -24,6 +24,9 @@
                         type="password"
                         required>
                         </v-text-field>
+                        <v-btn type="submit" color="primary" block>
+                            등록
+                        </v-btn>
                     </v-form>
                 </v-card-text>
             </v-col>
