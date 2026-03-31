@@ -3,14 +3,9 @@
         <v-row justify="center">
             <v-col cols="12" sm="4" md="6">
                 <v-card>
-                    <v-card-title class="text-h5 text-center">회원가입</v-card-title>
-                    <v-card-text>
-                    <v-form @submit.prevent="memberCreate">
-                        <v-text-field
-                        label="이름"
-                        v-model="name"
-                        required>
-                        </v-text-field>
+                    <v-card-title class="text-h5 text-center">로그인</v-card-title>
+                       <v-card-text>
+                    <v-form @submit.prevent="memberLogin">
                         <v-text-field
                         label="이메일"
                         v-model="email"
@@ -29,7 +24,6 @@
                     </v-form>
                 </v-card-text>
                 </v-card>
-                
             </v-col>
         </v-row>
     </v-container>
@@ -40,21 +34,19 @@ import axios from 'axios';
 export default{
     data(){
         return{
-            name:"",
             email:"",
             password:"",
         }
     },
     methods:{
-        async memberCreate(){
+       async memberLogin(){
             const data = {
-                name : this.name,
                 email : this.email,
-                password : this.password,
+                password : this.password
             }
-            await axios.post("http://localhost:8081/member/create", data);
-            this.$router.push('/');
-        }
+            const response = await axios.post("http://localhost:8081/member/doLogin", data);
+            console.log(response);
+       }
     }
 }
 </script>
