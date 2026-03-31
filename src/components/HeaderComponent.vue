@@ -7,12 +7,12 @@
                     <v-btn to="{path:'/groupchatting/list'}">채팅방목록</v-btn>
                 </v-col>
                 <v-col class = "text-center">
-                    <v-btn to="{path:'/'}">chat서비스</v-btn>
+                    <v-btn to='/'>chat서비스</v-btn>
                 </v-col>
                 <v-col class = "d-flex justify-end">
-                    <v-btn v-if="isLogin" to="{path:'/my/chat/page'}">MyChatPage</v-btn>
-                    <v-btn v-if="!isLogin" to="{path:'/member/create'}">회원가입</v-btn>
-                    <v-btn v-if="!isLogin" to="{path:'/login'}">로그인</v-btn>
+                    <v-btn v-if="isLogin" to='/my/chat/page'>MyChatPage</v-btn>
+                    <v-btn v-if="!isLogin" to='/member/create'>회원가입</v-btn>
+                    <v-btn v-if="!isLogin" to='/login'>로그인</v-btn>
                     <v-btn v-if="isLogin" @click="doLogout">로그아웃</v-btn>
                 </v-col>
             </v-row>
