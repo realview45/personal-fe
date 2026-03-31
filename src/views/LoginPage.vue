@@ -45,7 +45,8 @@ export default{
                 password : this.password
             }
             const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/member/doLogin`, data);
-            console.log(response);
+            localStorage.setItem("token", response.data.token);
+            window.location.href="/";
        }
     }
 }
